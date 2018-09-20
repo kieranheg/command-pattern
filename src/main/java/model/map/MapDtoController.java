@@ -6,13 +6,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MapDtoController {
-    private List<Command> dtoMappers = new ArrayList<>();
+    private List<Command> dtoMapperCommands = new ArrayList<>();
     
-    public void addMapper(Command mapCommand) {
-        dtoMappers.add(mapCommand);
+    public void addMapper(Command mapComponentCommand) {
+        dtoMapperCommands.add(mapComponentCommand);
     }
     
-    public void mapAllDto() {
-        dtoMappers.stream().forEach(Command::execute);
+    public void mapComponentsToDto() {
+        dtoMapperCommands.stream().forEach(Command::execute);
     }
 }

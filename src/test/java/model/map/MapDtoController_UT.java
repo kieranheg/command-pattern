@@ -9,16 +9,15 @@ public class MapDtoController_UT {
     
     @Test
     public void testMapDtoController() {
-        MapCoverageToDto mapCoverageToDto = new MapCoverageToDto(new CoverageDto());
-        MapAssetToDto mapAssetToDto = new MapAssetToDto(new AssetDto());
-        MapParticipantToDto mapParticipantToDto = new MapParticipantToDto(new ParticipantDto());
-        
+        ComponentMapToDtoCommand coverageMapToDtoCommand = new ComponentMapToDtoCommand(new CoverageDto());
+        ComponentMapToDtoCommand assetMapToDtoCommand = new ComponentMapToDtoCommand(new AssetDto());
+        ComponentMapToDtoCommand participantMapToDtoCommand = new ComponentMapToDtoCommand(new ParticipantDto());
         
         MapDtoController mapDtoController = new MapDtoController();
-        mapDtoController.addMapper(mapCoverageToDto);
-        mapDtoController.addMapper(mapAssetToDto);
-        mapDtoController.addMapper(mapParticipantToDto);
+        mapDtoController.addMapper(coverageMapToDtoCommand);
+        mapDtoController.addMapper(assetMapToDtoCommand);
+        mapDtoController.addMapper(participantMapToDtoCommand);
         
-        mapDtoController.mapAllDto();
+        mapDtoController.mapComponentsToDto();
     }
 }
