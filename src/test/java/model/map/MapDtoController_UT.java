@@ -14,9 +14,9 @@ public class MapDtoController_UT {
         ComponentMapToDtoCommand participantMapToDtoCommand = new ComponentMapToDtoCommand(new ParticipantDto());
         
         MapDtoController mapDtoController = new MapDtoController();
-        mapDtoController.addMapper(coverageMapToDtoCommand);
-        mapDtoController.addMapper(assetMapToDtoCommand);
-        mapDtoController.addMapper(participantMapToDtoCommand);
+        mapDtoController.registerDtoMapper(coverageMapToDtoCommand);
+        mapDtoController.registerDtoMapper(assetMapToDtoCommand);
+        mapDtoController.registerDtoMapper(participantMapToDtoCommand);
         
         mapDtoController.mapComponentsToDto();
     }

@@ -1,17 +1,16 @@
 package model.map;
 
-import model.Command;
 import model.dto.MapDto;
 
 public class ComponentMapToDtoCommand implements Command {
-    private MapDto assetDto;
+    private MapDto componentToMapToDto;
     
-    public ComponentMapToDtoCommand(MapDto assetDto) {
-        this.assetDto = assetDto;
+    ComponentMapToDtoCommand(MapDto componentToMapToDto) {
+        this.componentToMapToDto = componentToMapToDto;
     }
     
     @Override
     public void execute() {
-        assetDto.map();
+        componentToMapToDto.map();
     }
 }
