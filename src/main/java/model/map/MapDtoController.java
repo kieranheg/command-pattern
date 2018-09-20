@@ -6,11 +6,11 @@ import java.util.List;
 public class MapDtoController {
     private List<Command> dtoMapperCommands = new ArrayList<>();
     
-    void registerDtoMapper(Command mapComponentCommand) {
+    public void registerDtoMapper(Command mapComponentCommand) {
         dtoMapperCommands.add(mapComponentCommand);
     }
     
-    void mapComponentsToDto() {
+    public void mapComponentsToDto() {
         dtoMapperCommands.forEach(Command::execute);
     }
 }

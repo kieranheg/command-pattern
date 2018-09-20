@@ -5,7 +5,7 @@ import model.dto.MapDto;
 public class ComponentMapToDtoCommand implements Command {
     private MapDto componentToMapToDto;
     
-    ComponentMapToDtoCommand(MapDto componentToMapToDto) {
+    public ComponentMapToDtoCommand(MapDto componentToMapToDto) {
         this.componentToMapToDto = componentToMapToDto;
     }
     
