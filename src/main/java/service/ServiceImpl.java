@@ -13,11 +13,18 @@ public class ServiceImpl implements Service {
         mapDtoController = new MapDtoController();
     }
     
+    public void setUpCommands() {
+        setUpMapCommands();
+    }
+    
     @Override
     public void executeDtoMappers() {
+        mapDtoController.mapComponentsToDto();
+    }
+    
+    private void setUpMapCommands() {
         mapDtoController.registerDtoMapper(new ComponentMapToDtoCommand(new CoverageDto()));
         mapDtoController.registerDtoMapper(new ComponentMapToDtoCommand(new AssetDto()));
         mapDtoController.registerDtoMapper(new ComponentMapToDtoCommand(new ParticipantDto()));
-        mapDtoController.mapComponentsToDto();
     }
 }

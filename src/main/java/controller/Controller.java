@@ -5,9 +5,12 @@ import service.ServiceImpl;
 
 public class Controller {
     public static void main(String[] args) {
-        Service serviceImpl = new ServiceImpl();
+        Service service = new ServiceImpl();
         
-        serviceImpl.executeDtoMappers();
+        //setup map to DTO commands phase
+        service.setUpCommands();
         
+        // invoke mappers
+        service.executeDtoMappers();
     }
 }
